@@ -14,6 +14,7 @@
 		9A4F5B7A2AFCF58200A789CD /* NumberPuzzleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4F5B792AFCF58200A789CD /* NumberPuzzleTests.swift */; };
 		9A4F5B842AFCF58200A789CD /* NumberPuzzleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4F5B832AFCF58200A789CD /* NumberPuzzleUITests.swift */; };
 		9A4F5B862AFCF58200A789CD /* NumberPuzzleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4F5B852AFCF58200A789CD /* NumberPuzzleUITestsLaunchTests.swift */; };
+		9A4F5B952AFE0A7300A789CD /* PuzzleLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4F5B942AFE0A7300A789CD /* PuzzleLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		9A4F5B7F2AFCF58200A789CD /* NumberPuzzleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NumberPuzzleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A4F5B832AFCF58200A789CD /* NumberPuzzleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPuzzleUITests.swift; sourceTree = "<group>"; };
 		9A4F5B852AFCF58200A789CD /* NumberPuzzleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPuzzleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9A4F5B942AFE0A7300A789CD /* PuzzleLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				9A4F5B682AFCF58000A789CD /* NumberPuzzleApp.swift */,
+				9A4F5B942AFE0A7300A789CD /* PuzzleLogic.swift */,
 				9A4F5B6A2AFCF58000A789CD /* ContentView.swift */,
 				9A4F5B6C2AFCF58100A789CD /* Assets.xcassets */,
 				9A4F5B6E2AFCF58100A789CD /* Preview Content */,
@@ -259,6 +262,7 @@
 			files = (
 				9A4F5B6B2AFCF58000A789CD /* ContentView.swift in Sources */,
 				9A4F5B692AFCF58000A789CD /* NumberPuzzleApp.swift in Sources */,
+				9A4F5B952AFE0A7300A789CD /* PuzzleLogic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
