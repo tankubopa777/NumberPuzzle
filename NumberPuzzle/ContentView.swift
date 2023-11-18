@@ -32,11 +32,13 @@ struct ContentView: View {
                     ForEach(0..<4, id: \.self) { row in
                         HStack(spacing: 5) {
                             ForEach(0..<4, id: \.self) { column in
-                                BoxNumber(number: self.puzzleLogic.numbers[row * 4 + column], size: boxSize)
-                                    .aspectRatio(1, contentMode: .fit)
-                                    .onTapGesture {
-                                        self.puzzleLogic.moveNumber(row: row, column: column)
-                                    }
+                                                   BoxNumber(number: self.puzzleLogic.numbers[row * 4 + column], size: boxSize)
+                                                       .aspectRatio(1, contentMode: .fit)
+                                                       .onTapGesture {
+                                                           withAnimation(.easeInOut(duration: 0.5)) {
+                                                               self.puzzleLogic.moveNumber(row: row, column: column)
+                                                           }
+                                                       }
                             }
                         }
                     }
@@ -45,12 +47,13 @@ struct ContentView: View {
 
 //              show text when you win
                 if puzzleLogic.hasWon {
-                    Text("You Win!")
+                    Text("You Win!!!!")
                         .font(.largeTitle)
                         .padding()
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }
+//               Moves count
                 Text("Moves: \(puzzleLogic.moveCount)")
                     .font(.headline)
                     .foregroundColor(.white)

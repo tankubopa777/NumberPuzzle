@@ -22,7 +22,6 @@ class PuzzleLogic: ObservableObject {
         if hasWon {
             return
         }
-
         let index = row * 4 + column
 //      check above if its clear
         if let above = index < 4 ? nil : index - 4, numbers[above] == 0 {
@@ -55,10 +54,10 @@ class PuzzleLogic: ObservableObject {
     }
 
 // function for check win
-//    func winNow() {
-//        numbers = Array(1...15) + [0]
-//        hasWon = true
-//    }
+    func winNow() {
+        numbers = Array(1...15) + [0]
+        hasWon = true
+    }
 
     private func checkWin() {
         hasWon = numbers == Array(1...15) + [0]
