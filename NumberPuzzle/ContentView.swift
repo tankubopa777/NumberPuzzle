@@ -11,25 +11,28 @@ struct ContentView: View {
     @ObservedObject var puzzleLogic = PuzzleLogic()
 
     var body: some View {
+//      Use GeometryReader for make ui adapt with screen
         GeometryReader { geometry in
             VStack {
                 Button("New Game") {
                     puzzleLogic.newGame()
                 }
                 .font(.title)
-                .padding()
-                .background(Color.green)
                 .foregroundColor(.white)
-                .cornerRadius(10)
+                .padding()
+                
+              
+//              define screen size
+                let minScreenSize = min(geometry.size.width, geometry.size.height)
+//              define box of number size
+                let boxSize = minScreenSize / 4 - 10
 
-                let smallestDimension = min(geometry.size.width, geometry.size.height)
-                let squareSize = smallestDimension / 4 - 10 // Adjust the -10 if more space is needed
-
+//              create number box 4x4
                 VStack(spacing: 5) {
                     ForEach(0..<4, id: \.self) { row in
                         HStack(spacing: 5) {
                             ForEach(0..<4, id: \.self) { column in
-                                NumberSquareView(number: self.puzzleLogic.numbers[row * 4 + column], size: squareSize)
+                                BoxNumber(number: self.puzzleLogic.numbers[row * 4 + column], size: boxSize)
                                     .aspectRatio(1, contentMode: .fit)
                                     .onTapGesture {
                                         self.puzzleLogic.moveNumber(row: row, column: column)
@@ -40,30 +43,33 @@ struct ContentView: View {
                 }
                 .padding(.horizontal)
 
+//              show text when you win
                 if puzzleLogic.hasWon {
                     Text("You Win!")
                         .font(.largeTitle)
                         .padding()
-                        .background(Color.blue)
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }
-
                 Text("Moves: \(puzzleLogic.moveCount)")
                     .font(.headline)
+                    .foregroundColor(.white)
                     .padding()
 
-                Button("Win Now") {
-                    puzzleLogic.winNow()
-                }
+//                This code use for check winner
+//                Button("Win Now") {
+//                    puzzleLogic.winNow()
+//                }
             }
             .padding()
             .frame(width: geometry.size.width, height: geometry.size.height)
+            .background(Color(red: 0.2, green: 0.2, blue: 0.2, opacity: 1.0))
         }
     }
 }
 
-struct NumberSquareView: View {
+// config box number
+struct BoxNumber: View {
     let number: Int
     let size: CGFloat
 
